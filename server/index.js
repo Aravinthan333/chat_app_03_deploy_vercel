@@ -19,7 +19,7 @@ const { app, server } = require("./socket/index");
 // );
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://chat-app-03-deploy-vercel.vercel.app",
   optionsSuccessStatus: 200,
   credentials: true,
 };
