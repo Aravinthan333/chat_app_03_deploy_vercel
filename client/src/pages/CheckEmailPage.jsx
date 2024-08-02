@@ -26,7 +26,7 @@ const CheckEmailPage = () => {
     e.stopPropagation();
 
     // eslint-disable-next-line no-undef
-    const URL = `${process.env.BACKEND_URL}/api/email`;
+    const URL = `${process.env.BACKEND_URL}api/email`;
 
     try {
       const response = await axios.post(URL, data);
