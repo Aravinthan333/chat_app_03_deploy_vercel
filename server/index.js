@@ -19,7 +19,7 @@ const { app, server } = require("./socket/index");
 // );
 
 const corsOptions = {
-  origin: "https://social-chat-app-001.netlify.app",
+  origin: "*",
   optionsSuccessStatus: 200,
   credentials: true,
 };

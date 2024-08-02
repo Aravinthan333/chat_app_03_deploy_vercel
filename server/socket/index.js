@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://social-chat-app-001.netlify.app",
+    origin: "https://chat-app-03-deploy-vercel.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
   },
