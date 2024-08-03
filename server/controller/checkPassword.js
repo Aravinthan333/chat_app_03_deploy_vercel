@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 async function checkPassword(request, response) {
   response.setHeader(
     "Access-Control-Allow-Origin",
-    "https://chat-app-03-deploy-vercel.vercel.app"
+    "https://chat-app-03-deploy-vercel-pvdm-a0dvo2aqa.vercel.app"
   );
   try {
     const { password, userId } = request.body;

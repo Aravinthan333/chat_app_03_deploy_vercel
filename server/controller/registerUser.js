@@ -4,7 +4,7 @@ const bcryptjs = require("bcryptjs");
 async function registerUser(request, response) {
   response.setHeader(
     "Access-Control-Allow-Origin",
-    "https://chat-app-03-deploy-vercel.vercel.app"
+    "https://chat-app-03-deploy-vercel-pvdm-a0dvo2aqa.vercel.app"
   );
   try {
     const { name, email, password, profile_pic } = request.body;

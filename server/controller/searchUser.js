@@ -3,7 +3,7 @@ const UserModel = require("../models/UserModel");
 async function searchUser(request, response) {
   response.setHeader(
     "Access-Control-Allow-Origin",
-    "https://chat-app-03-deploy-vercel.vercel.app"
+    "https://chat-app-03-deploy-vercel-pvdm-a0dvo2aqa.vercel.app"
   );
   try {
     const { search } = request.body;

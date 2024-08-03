@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-03-deploy-vercel.vercel.app",
+    origin: "https://chat-app-03-deploy-vercel-pvdm-a0dvo2aqa.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
