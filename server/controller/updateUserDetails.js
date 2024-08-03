@@ -2,6 +2,10 @@ const getUserDetailsFromToken = require("../helpers/getUserDetailsFromToken");
 const UserModel = require("../models/UserModel");
 
 async function updateUserDetails(request, response) {
+  response.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://chat-app-03-deploy-vercel.vercel.app"
+  );
   try {
     const token = request.cookies.token || "";
 

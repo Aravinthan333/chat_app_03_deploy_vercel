@@ -1,6 +1,10 @@
 const getUserDetailsFromToken = require("../helpers/getUserDetailsFromToken");
 
 async function userDetails(request, response) {
+  response.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://chat-app-03-deploy-vercel.vercel.app"
+  );
   try {
     const token = request.cookies.token || "";
 
