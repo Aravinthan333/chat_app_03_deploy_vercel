@@ -27,6 +27,7 @@ const io = new Server(server, {
     origin: "https://chat-app-03-deploy-vercel.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   },
 });
 
