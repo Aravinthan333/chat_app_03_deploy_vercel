@@ -14,12 +14,24 @@ const SearchUser = ({ onClose }) => {
 
   const handleSearchUser = async () => {
     // eslint-disable-next-line no-undef
-    const URL = `${process.env.BACKEND_URL}/api/search-user`;
+    // const URL = `${process.env.BACKEND_URL}/api/search-user`;
     try {
       setLoading(true);
-      const response = await axios.post(URL, {
-        search: search,
-      });
+      // const response = await axios.post(URL, {
+      //   search: search,
+      // });
+
+      const response = await fetch(
+        "https://chat-app-03-deploy-vercel.vercel.app/api/search-user",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       setLoading(false);
 
       setSearchUser(response.data.data);

@@ -24,12 +24,23 @@ const Home = () => {
   const fetchUserDetails = async () => {
     try {
       // eslint-disable-next-line no-undef
-      const URL = `${process.env.BACKEND_URL}/api/user-details`;
+      // const URL = `${process.env.BACKEND_URL}/api/user-details`;
 
-      const response = await axios({
-        url: URL,
-        withCredentials: true,
-      });
+      // const response = await axios({
+      //   url: URL,
+      //   withCredentials: true,
+      // });
+
+      const response = await fetch(
+        "https://chat-app-03-deploy-vercel.vercel.app/api/user-details",
+        {
+          method: "GET",
+          credentials: "include",
+          // headers: {
+          //   'Content-Type': 'application/json'
+          // }
+        }
+      );
 
       dispatch(setUser(response.data.data));
 

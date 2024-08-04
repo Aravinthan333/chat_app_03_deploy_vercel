@@ -55,10 +55,22 @@ const RegisterPage = () => {
     e.stopPropagation();
 
     // eslint-disable-next-line no-undef
-    const URL = `${process.env.BACKEND_URL}/api/register`;
+    // const URL = `${process.env.BACKEND_URL}/api/register`;
 
     try {
-      const response = await axios.post(URL, data);
+      // const response = await axios.post(URL, data);
+
+      const response = await fetch(
+        "https://chat-app-03-deploy-vercel.vercel.app/api/register",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       console.log("response", response);
 

@@ -60,14 +60,27 @@ const EditUserDetails = ({ onClose, user }) => {
     e.stopPropagation();
     try {
       // eslint-disable-next-line no-undef
-      const URL = `${process.env.BACKEND_URL}/api/update-user`;
+      // const URL = `${process.env.BACKEND_URL}/api/update-user`;
 
-      const response = await axios({
-        method: "post",
-        url: URL,
-        data: data,
-        withCredentials: true,
-      });
+      // const response = await axios({
+      //   method: "post",
+      //   url: URL,
+      //   data,
+      //   withCredentials: true,
+      // });
+
+      const response = await fetch(
+        "https://chat-app-03-deploy-vercel.vercel.app/api/update-user",
+        {
+          method: "POST",
+          credentials: "include",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       console.log("response", response);
       taost.success(response?.data?.message);

@@ -38,18 +38,37 @@ const CheckPasswordPage = () => {
     e.stopPropagation();
 
     // eslint-disable-next-line no-undef
-    const URL = `${process.env.BACKEND_URL}/api/password`;
+    // const URL = `${process.env.BACKEND_URL}/api/password`;
 
     try {
-      const response = await axios({
-        method: "post",
-        url: URL,
+      // const response = await axios({
+      //   method: "post",
+      //   url: URL,
+      //   data: {
+      //     userId: location?.state?._id,
+      //     password: data.password,
+      //   },
+      //   withCredentials: true,
+      // });
+
+      const data = {
         data: {
           userId: location?.state?._id,
           password: data.password,
         },
-        withCredentials: true,
-      });
+      };
+
+      const response = await fetch(
+        "https://chat-app-03-deploy-vercel.vercel.app/api/password",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       toast.success(response.data.message);
 
